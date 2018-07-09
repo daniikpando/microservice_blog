@@ -1,0 +1,8 @@
+{
+  "engine": "postgres",
+  "server": "micro-data",
+  "port": "5432",
+  "user": "daniel",
+  "password": "123456",
+  "database": "basic_microservice"
+}

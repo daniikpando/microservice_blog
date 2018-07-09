@@ -1,0 +1,20 @@
+version: '3'
+services: 
+  article_service:
+    build: ./article
+    image: micro/article
+    container_name: micro-article
+    volumes:
+      - ./article:/go/src/github.com/daniel/basic_microservice/article
+    ports:
+      - 3000:8080
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    build: ./backup
+    image: micro/data
+    container_name: micro-data
+    ports:
+      - 5432:5432
